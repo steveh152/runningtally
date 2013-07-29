@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By Event"
+        android:id="@+id/toResEvents"
+        android:layout_gravity="left|center_vertical"
+        android:onClick="byEvent"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By Athlete"
+        android:id="@+id/toResAth"
+        android:layout_gravity="left|center_vertical"
+        android:onClick="byAthlete"/>
+</LinearLayout>
