@@ -20,14 +20,13 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     /* Creates the table
      * layout:
      *
-     *   _id        - key
-     *   athlete    - athlete text
+     *   _id        - key            - time
+     *   athlete    - athlete text   - athlete time
      */
     @Override
     public void onCreate(SQLiteDatabase database) {
         database.execSQL("CREATE TABLE athletes (_id INTEGER PRIMARY KEY AUTOINCREMENT, athlete TEXT NOT NULL);");
-
-
+//---------->------------>------------->------------>------------->------------->-------------->-------------->THIS^^^ (", time INTEGER")
     }
 
     @Override

@@ -29,6 +29,8 @@ public class ResAthletes extends ListActivity {
 
     protected void onListItemClick(ListView l, View v, int pos, long id) {
     	Athlete athlete = (Athlete)getListAdapter().getItem(pos);
+        long time = athlete.getTime();
+        //Toast.makeText(getApplicationContext(), String.valueOf(time), Toast.LENGTH_LONG).show();
     	dao.deleteAthlete(athlete.getId());
     	setListAdapter(new ListAdapter(this, dao.getAthletes()));
     	Toast.makeText(getApplicationContext(), "deleted", Toast.LENGTH_SHORT).show();

@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
 
     public void toEvents(View view) {
         //Toast.makeText(getApplicationContext(), "going to activity...", Toast.LENGTH_SHORT).show();
-        Intent to_event = new Intent(this, Events.class);
+        Intent to_event = new Intent(this, Timer.class);
         startActivity(to_event);
     }
 

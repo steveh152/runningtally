@@ -25,9 +25,12 @@ public class DAO {
         db.close();
     }
 
-    public void createAthlete(String name) {
+    public void createAthlete(String name/*, long time*/) {
+    	//------------>----------->-------->THIS^^^
         ContentValues values = new ContentValues();
         values.put("athlete", name);
+        //values.put("time", time);
+        //THIS LINE^^^
         db.insert("athletes", null, values);
     }
 
@@ -39,8 +42,8 @@ public class DAO {
         List athleteList = new ArrayList();
 
         // name of columns we want to select:
-        String[] tableColumns = new String[] {"_id", "athlete"};
-
+        String[] tableColumns = new String[] {"_id", "athlete"/*, "time"*/};
+//--------->------------>------------>----------->----------->THIS^^^
         // query database
         Cursor cursor = db.query("athletes", tableColumns, null, null, null, null, null);
         cursor.moveToFirst();
@@ -51,6 +54,8 @@ public class DAO {
             // take values from db
             athlete.setId(cursor.getInt(0));
             athlete.setName(cursor.getString(1));
+            //athlete.setTime(cursor.getLong(2));
+//--------->THIS LINE^^^ 
             // add to db
             athleteList.add(athlete);
             // move to next result

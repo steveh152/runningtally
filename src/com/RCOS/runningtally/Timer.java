@@ -36,18 +36,6 @@ public class Timer extends Activity {
         Button store;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
-        Bundle extras = getIntent().getExtras();
-        if (extras == null) {
-            return;
-        }
-        event = extras.getString(Intent.EXTRA_TEXT);
-        if (event != null) {
-            Toast.makeText(getApplicationContext(), "event: " + event, Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Toast.makeText(getApplicationContext(), "event not recognized", Toast.LENGTH_SHORT).show();
-        }
-
         timer1 = (Chronometer)findViewById(R.id.timer_1);
         start = (Button)findViewById(R.id.start);
         start.setOnClickListener(startListener);
@@ -96,7 +84,8 @@ public class Timer extends Activity {
         @Override
         public void onClick(View view) {
             String athleteTextValue = name1txt.getText().toString();
-            dao.createAthlete(athleteTextValue);
+            dao.createAthlete(athleteTextValue/*, time1*/);
+//---------->---------->---------->---------->THIS^^^
             Toast.makeText(getApplicationContext(), "athlete added", Toast.LENGTH_SHORT).show();
             //dao.close();
         }
